@@ -11,6 +11,7 @@ import {
 
 export const usersTable = pgTable("users", {
   id: uuid("id").defaultRandom().primaryKey(),
+  
 });
 
 export const usersTableRelations = relations(usersTable, ({ many }) => ({
