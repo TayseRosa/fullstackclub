@@ -1,36 +1,108 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🩺 Doutor Agenda
 
-## Getting Started
+Sistema web desenvolvido com **Next.js** e **TypeScript**, com configuração de linting personalizada para garantir código limpo, organizado e com boas práticas.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## 🚀 Tecnologias Utilizadas
+
+- [Next.js](https://nextjs.org/)
+- [React](https://reactjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [ESLint](https://eslint.org/)
+- [eslint-plugin-simple-import-sort](https://github.com/lydell/eslint-plugin-simple-import-sort)
+- [Tailwind CSS](https://tailwindcss.com/) (presumido com base no `className="bg-red-500"`)
+
+---
+
+## 📂 Estrutura do Projeto
+
+O projeto utiliza `@/*` como **alias para `src/`**, facilitando a importação de módulos internos:
+
+```ts
+import { Button } from "@/components/ui/button";
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🧠 Linting e Estilo de Código
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+O projeto utiliza uma configuração customizada com o pacote `@eslint/eslintrc` e plugin de importação ordenada:
 
-## Learn More
+### 📦 Dependências relevantes do ESLint
 
-To learn more about Next.js, take a look at the following resources:
+- `@eslint/eslintrc`
+- `eslint-plugin-simple-import-sort`
+- `next/core-web-vitals`
+- `next/typescript`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### 📄 Regras definidas:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```js
+"simple-import-sort/imports": "error",
+"simple-import-sort/exports": "error"
+```
 
-## Deploy on Vercel
+Essa configuração ordena automaticamente os imports e exports, melhorando a legibilidade e consistência do código.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## ⚙️ Configuração do TypeScript (`tsconfig.json`)
+
+- Alvo: ES2017
+- Módulo: `esnext` com `bundler` resolution
+- JSX: Preservado (ideal para Next.js)
+- Alias: `@/*` mapeia para `./src/*`
+- Plugins: Suporte a `next`
+
+---
+
+## 🧪 Exemplo de componente
+
+```tsx
+import { Button } from "@/components/ui/button";
+
+export default function Home() {
+  return <Button className="bg-red-500 items-center flex">Teste button Tayse Rosadsfs2</Button>;
+}
+```
+
+---
+
+## 📥 Instalação
+
+```bash
+# Clonar o projeto
+git clone https://github.com/seu-usuario/doutor-agenda.git
+
+# Instalar dependências
+cd doutor-agenda
+npm install
+```
+
+---
+
+## 🧪 Scripts disponíveis
+
+```bash
+# Rodar o servidor em desenvolvimento
+npm run dev
+
+# Verificar erros de lint
+npm run lint
+
+# Build para produção
+npm run build
+```
+
+---
+
+## 📄 Licença
+
+Este projeto está sob a licença MIT. Veja o arquivo `LICENSE` para mais detalhes.
+
+---
+
+## ✨ Autoria
+
+Desenvolvido com ❤️ por Tayse Rosa.
